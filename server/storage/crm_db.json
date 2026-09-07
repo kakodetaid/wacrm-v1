@@ -1,0 +1,350 @@
+{
+  "accounts": [
+    {
+      "id": "account_1",
+      "name": "WA 1 - CS & Layanan Utama",
+      "phone": "6282164871945",
+      "color": "#10B981",
+      "role": "Layanan Pelanggan & Informasi",
+      "assignedAgent": "Dewi CS",
+      "assignedUsername": "cs",
+      "status": "connected",
+      "user": {
+        "id": "6282164871945:4@s.whatsapp.net",
+        "name": "IcaL Mix !!!",
+        "lid": "42331818442799:4@lid"
+      }
+    },
+    {
+      "id": "account_2",
+      "name": "WA 2 - Sales & Akuisisi",
+      "phone": "",
+      "color": "#3B82F6",
+      "role": "Penjualan & Penawaran Prospek",
+      "assignedAgent": "Rian Sales",
+      "assignedUsername": "sales",
+      "status": "disconnected",
+      "user": null
+    },
+    {
+      "id": "account_3",
+      "name": "WA 3 - Aftersales & Tagihan",
+      "phone": "",
+      "color": "#F59E0B",
+      "role": "Dukungan Teknis & Penagihan",
+      "assignedAgent": "Fajar Support",
+      "assignedUsername": "support",
+      "status": "disconnected",
+      "user": null
+    }
+  ],
+  "contacts": [
+    {
+      "id": "c_b3cb9292",
+      "name": "Kontak 1945",
+      "phone": "6282164871945",
+      "company": "-",
+      "email": "",
+      "tags": [
+        "Lead Baru"
+      ],
+      "assignedAgent": "Dewi CS",
+      "accountId": "account_1",
+      "stage": "lead",
+      "dealValue": 0,
+      "createdAt": "2026-09-07T07:49:55.393Z",
+      "notes": []
+    },
+    {
+      "id": "c_778b9261",
+      "name": "TITO AGUSTIKA",
+      "phone": "6287898586605",
+      "company": "PT KAKODETA ID",
+      "email": "pedansaresahku@gmail.com",
+      "tags": [
+        "Lead Baru"
+      ],
+      "assignedAgent": "Rian Sales",
+      "accountId": "account_1",
+      "stage": "lead",
+      "dealValue": 0,
+      "createdAt": "2026-09-07T07:49:20.744Z",
+      "notes": [],
+      "lid": "4510437093482"
+    }
+  ],
+  "messages": [
+    {
+      "id": "m_e3cfb5aa-3",
+      "contactId": "c_b3cb9292",
+      "accountId": "account_1",
+      "fromMe": true,
+      "senderName": "IcaL Mix !!!",
+      "text": "[Media/Sticker]",
+      "timestamp": "2026-09-07T07:49:51.000Z",
+      "status": "sent",
+      "mediaUrl": null,
+      "mediaType": null
+    },
+    {
+      "id": "m_afb06ed6-6",
+      "contactId": "c_b3cb9292",
+      "accountId": "account_1",
+      "fromMe": true,
+      "senderName": "IcaL Mix !!!",
+      "text": "[Media/Sticker]",
+      "timestamp": "2026-09-07T07:49:51.000Z",
+      "status": "sent",
+      "mediaUrl": null,
+      "mediaType": null
+    },
+    {
+      "id": "m_d44aaef5-7",
+      "contactId": "c_b3cb9292",
+      "accountId": "account_1",
+      "fromMe": true,
+      "senderName": "IcaL Mix !!!",
+      "text": "[Media/Sticker]",
+      "timestamp": "2026-09-07T07:49:51.000Z",
+      "status": "sent",
+      "mediaUrl": null,
+      "mediaType": null
+    },
+    {
+      "id": "m_b28859e2-4",
+      "contactId": "c_b3cb9292",
+      "accountId": "account_1",
+      "fromMe": true,
+      "senderName": "IcaL Mix !!!",
+      "text": "[Media/Sticker]",
+      "timestamp": "2026-09-07T07:49:51.000Z",
+      "status": "sent",
+      "mediaUrl": null,
+      "mediaType": null
+    },
+    {
+      "id": "m_53712bb7-0",
+      "contactId": "c_b3cb9292",
+      "accountId": "account_1",
+      "fromMe": true,
+      "senderName": "IcaL Mix !!!",
+      "text": "[Media/Sticker]",
+      "timestamp": "2026-09-07T07:49:51.000Z",
+      "status": "sent",
+      "mediaUrl": null,
+      "mediaType": null
+    },
+    {
+      "id": "m_9b543d2e-f",
+      "contactId": "c_b3cb9292",
+      "accountId": "account_1",
+      "fromMe": true,
+      "senderName": "IcaL Mix !!!",
+      "text": "[Media/Sticker]",
+      "timestamp": "2026-09-07T07:49:52.000Z",
+      "status": "sent",
+      "mediaUrl": null,
+      "mediaType": null
+    },
+    {
+      "id": "m_a2d0afe7-f",
+      "contactId": "c_b3cb9292",
+      "accountId": "account_1",
+      "fromMe": true,
+      "senderName": "IcaL Mix !!!",
+      "text": "[Media/Sticker]",
+      "timestamp": "2026-09-07T07:49:52.000Z",
+      "status": "sent",
+      "mediaUrl": null,
+      "mediaType": null
+    },
+    {
+      "id": "m_2a581521-3",
+      "contactId": "c_b3cb9292",
+      "accountId": "account_1",
+      "fromMe": true,
+      "senderName": "IcaL Mix !!!",
+      "text": "[Media/Sticker]",
+      "timestamp": "2026-09-07T07:49:55.000Z",
+      "status": "sent",
+      "mediaUrl": null,
+      "mediaType": null
+    },
+    {
+      "id": "m_944f8111-d",
+      "contactId": "c_778b9261",
+      "accountId": "account_1",
+      "fromMe": true,
+      "senderName": "Agen CRM",
+      "text": "halo pak",
+      "timestamp": "2026-09-07T07:50:11.899Z",
+      "status": "sent",
+      "mediaUrl": null,
+      "mediaType": null
+    },
+    {
+      "id": "m_f2587fa4-9",
+      "contactId": "c_778b9261",
+      "accountId": "account_1",
+      "fromMe": false,
+      "senderName": "ADG/Supplier Alat Listrik",
+      "text": "[Media/Sticker]",
+      "timestamp": "2026-09-07T07:50:14.000Z",
+      "status": "read",
+      "mediaUrl": null,
+      "mediaType": null
+    },
+    {
+      "id": "m_c9a13572-1",
+      "contactId": "c_778b9261",
+      "accountId": "account_1",
+      "fromMe": false,
+      "senderName": "ADG/Supplier Alat Listrik",
+      "text": "Ya cal",
+      "timestamp": "2026-09-07T07:53:47.000Z",
+      "status": "read",
+      "mediaUrl": null,
+      "mediaType": null
+    },
+    {
+      "id": "m_03697a95-b",
+      "contactId": "c_778b9261",
+      "accountId": "account_1",
+      "fromMe": true,
+      "senderName": "Agen CRM",
+      "text": "/rek",
+      "timestamp": "2026-09-07T08:50:21.622Z",
+      "status": "sent",
+      "mediaUrl": null,
+      "mediaType": null
+    },
+    {
+      "id": "m_4faa6f4e-6",
+      "contactId": "c_778b9261",
+      "accountId": "account_1",
+      "fromMe": false,
+      "senderName": "ADG/Supplier Alat Listrik",
+      "text": "[Media/Sticker]",
+      "timestamp": "2026-09-07T08:50:23.000Z",
+      "status": "read",
+      "mediaUrl": null,
+      "mediaType": null
+    }
+  ],
+  "quickReplies": [
+    {
+      "id": "qr1",
+      "shortcut": "/salam",
+      "title": "Salam Pembuka Ramah",
+      "content": "Halo Kak! Terima kasih sudah menghubungi kami. Ada yang bisa kami bantu seputar kebutuhan bisnis Anda hari ini? 😊"
+    },
+    {
+      "id": "qr2",
+      "shortcut": "/rek",
+      "title": "Informasi Rekening Bank",
+      "content": "Pembayaran resmi dapat ditransfer melalui:\n💳 Bank BCA: 8870-123-456 a.n PT Bisnis Solusi Digital\nMohon sertakan bukti transfer setelah melakukan transaksi ya Kak. Terima kasih!"
+    },
+    {
+      "id": "qr3",
+      "shortcut": "/jamkerja",
+      "title": "Jam Operasional Kantor",
+      "content": "Jam operasional layanan kami:\nSenin - Jumat: 08.30 - 17.00 WIB\nSabtu: 09.00 - 14.00 WIB\nPesan di luar jam kerja akan kami respon segera pada jam kerja berikutnya 🙏"
+    },
+    {
+      "id": "qr4",
+      "shortcut": "/katalog",
+      "title": "Pricelist & Brosur",
+      "content": "Berikut tautan brosur dan pricelist paket lengkap kami:\n👉 https://example.com/pricelist-2026\nSilakan dipelajari terlebih dahulu, kami siap bantu jelaskan detailnya."
+    }
+  ],
+  "pipelineStages": [
+    {
+      "id": "lead",
+      "title": "Lead Masuk",
+      "color": "#94A3B8"
+    },
+    {
+      "id": "contacted",
+      "title": "Dihubungi / Follow Up",
+      "color": "#60A5FA"
+    },
+    {
+      "id": "qualified",
+      "title": "Kualifikasi Kebutuhan",
+      "color": "#A78BFA"
+    },
+    {
+      "id": "negotiation",
+      "title": "Penawaran & Negosiasi",
+      "color": "#FBBF24"
+    },
+    {
+      "id": "won",
+      "title": "Closing / Deal",
+      "color": "#34D399"
+    },
+    {
+      "id": "lost",
+      "title": "Tidak Tertarik / Batal",
+      "color": "#F87171"
+    }
+  ],
+  "agents": [
+    {
+      "id": "ag1",
+      "name": "Dewi CS",
+      "role": "Customer Service",
+      "email": "dewi@crm.local",
+      "active": true
+    },
+    {
+      "id": "ag2",
+      "name": "Rian Sales",
+      "role": "Sales Executive",
+      "email": "rian@crm.local",
+      "active": true
+    },
+    {
+      "id": "ag3",
+      "name": "Fajar Support",
+      "role": "Technical Support",
+      "email": "fajar@crm.local",
+      "active": true
+    }
+  ],
+  "broadcastCampaigns": [],
+  "users": [
+    {
+      "id": "u1",
+      "username": "admin",
+      "password": "admin123",
+      "name": "Super Admin",
+      "role": "admin",
+      "email": "admin@crm.local"
+    },
+    {
+      "id": "u2",
+      "username": "sales",
+      "password": "sales123",
+      "name": "Rian Sales",
+      "role": "sales",
+      "email": "rian@crm.local"
+    },
+    {
+      "id": "u3",
+      "username": "cs",
+      "password": "cs123",
+      "name": "Dewi CS",
+      "role": "sales",
+      "email": "dewi@crm.local"
+    },
+    {
+      "id": "u4",
+      "username": "support",
+      "password": "support123",
+      "name": "Fajar Support",
+      "role": "sales",
+      "email": "fajar@crm.local"
+    }
+  ]
+}
