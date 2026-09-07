@@ -22,7 +22,7 @@ function waitForServer(callback, retries = 0) {
     console.warn('[Electron] Server port check timeout, attempting window load anyway.');
     return callback();
   }
-  http.get(`http://localhost:${PORT}/api/accounts`, (res) => {
+  http.get(`http://127.0.0.1:${PORT}/api/accounts`, (res) => {
     if (res.statusCode === 200) {
       callback();
     } else {
@@ -50,7 +50,7 @@ function createWindow() {
     backgroundColor: '#FFFFFF'
   });
 
-  mainWindow.loadURL(`http://localhost:${PORT}`);
+  mainWindow.loadURL(`http://127.0.0.1:${PORT}`);
 
   mainWindow.once('ready-to-show', () => {
     mainWindow.show();

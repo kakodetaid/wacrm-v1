@@ -39,13 +39,20 @@
     "files": [
       "desktop/**/*",
       "server/**/*",
-      "client/dist/**/*",
+      {
+        "from": "client/dist",
+        "to": "client/dist",
+        "filter": [
+          "**/*"
+        ]
+      },
       "package.json",
       "!server/sessions/**/*"
     ],
     "asar": true,
     "asarUnpack": [
-      "**/node_modules/@whiskeysockets/baileys/**/*"
+      "**/node_modules/@whiskeysockets/baileys/**/*",
+      "client/dist/**/*"
     ],
     "win": {
       "target": [

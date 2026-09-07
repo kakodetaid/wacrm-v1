@@ -25,26 +25,32 @@ waManager.setIO(io);
 // Mount API routes
 app.use('/api', apiRoutes);
 
-// Serve static frontend files from client/dist if exists (Desktop / Production Mode)
+// Serve static frontend files from client/dist (Desktop / Production Mode)
 const fs = require('fs');
-const clientDistPath = path.join(__dirname, '..', 'client', 'dist');
-if (fs.existsSync(clientDistPath)) {
+const potentialDistPaths = [
+  path.join(__dirname, '..', 'client', 'dist'),
+  path.join(__dirname, '..', '..', 'app.asar.unpacked', 'client', 'dist'),
+  path.join(process.resourcesPath || '', 'app.asar.unpacked', 'client', 'dist'),
+  path.join(process.resourcesPath || '', 'client', 'dist'),
+  path.join(process.cwd(), 'client', 'dist')
+];
+
+let clientDistPath = potentialDistPaths.find(p => fs.existsSync(path.join(p, 'index.html')));
+
+if (clientDistPath) {
+  console.log(`[Server] Menyajikan antarmuka frontend dari: ${clientDistPath}`);
   app.use(express.static(clientDistPath));
-  app.get('*', (req, res, next) => {
-    if (req.path.startsWith('/api') || req.path.startsWith('/socket.io')) {
-      return next();
+  // SPA fallback yang kompatibel dengan Express 5
+  app.use((req, res, next) => {
+    if (req.method === 'GET' && !req.path.startsWith('/api') && !req.path.startsWith('/socket.io')) {
+      return res.sendFile(path.join(clientDistPath, 'index.html'));
     }
-    res.sendFile(path.join(clientDistPath, 'index.html'));
+    next();
   });
 } else {
-  // Root health check fallback
+  console.warn('[Server] client/dist/index.html tidak ditemukan!');
   app.get('/', (req, res) => {
-    res.json({
-      name: 'Multi-WhatsApp CRM Gateway & Backend',
-      version: '1.0.0',
-      status: 'online',
-      timestamp: new Date().toISOString()
-    });
+    res.send('<h2>WACRM Pro Backend Online</h2><p>Frontend sedang disiapkan...</p>');
   });
 }
 
