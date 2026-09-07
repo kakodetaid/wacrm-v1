@@ -2,18 +2,68 @@
   "name": "projek-2---crm",
   "version": "1.0.0",
   "description": "WhatsApp Multi-Device Enterprise CRM",
-  "main": "server/index.js",
+  "main": "desktop/main.js",
   "scripts": {
     "server": "node server/index.js",
     "client": "npm run dev --prefix client",
     "dev": "concurrently -n \"SERVER,CLIENT\" -c \"green,blue\" \"npm run server\" \"npm run client\"",
-    "build": "npm run build --prefix client"
+    "build": "npm run build --prefix client",
+    "electron:start": "electron .",
+    "electron:build": "npm run build && electron-builder --win --x64"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "concurrently": "^9.1.2"
+    "@whiskeysockets/baileys": "^7.0.0-rc14",
+    "concurrently": "^9.1.2",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "pino": "^10.3.1",
+    "qrcode": "^1.5.4",
+    "socket.io": "^4.8.3",
+    "uuid": "^14.0.2"
+  },
+  "devDependencies": {
+    "electron": "^44.2.0",
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "com.kakodeta.wacrmpro",
+    "productName": "WACRM Pro",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "desktop/**/*",
+      "server/**/*",
+      "client/dist/**/*",
+      "package.json",
+      "!server/sessions/**/*"
+    ],
+    "asar": true,
+    "asarUnpack": [
+      "**/node_modules/@whiskeysockets/baileys/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "WACRM Pro",
+      "runAfterFinish": true
+    }
   }
 }

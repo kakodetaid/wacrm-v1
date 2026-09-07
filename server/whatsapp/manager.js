@@ -15,7 +15,9 @@ class WhatsAppManager {
   constructor() {
     this.sessions = new Map(); // accountId -> { sock, qrDataUrl, status }
     this.io = null; // Socket.IO instance
-    this.baseSessionDir = path.join(__dirname, '..', 'sessions');
+    this.baseSessionDir = process.env.WACRM_DATA_PATH
+      ? path.join(process.env.WACRM_DATA_PATH, 'sessions')
+      : path.join(__dirname, '..', 'sessions');
 
     if (!fs.existsSync(this.baseSessionDir)) {
       fs.mkdirSync(this.baseSessionDir, { recursive: true });

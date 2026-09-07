@@ -8,12 +8,8 @@
       "role": "Layanan Pelanggan & Informasi",
       "assignedAgent": "Dewi CS",
       "assignedUsername": "cs",
-      "status": "connected",
-      "user": {
-        "id": "6282164871945:4@s.whatsapp.net",
-        "name": "IcaL Mix !!!",
-        "lid": "42331818442799:4@lid"
-      }
+      "status": "disconnected",
+      "user": null
     },
     {
       "id": "account_2",

@@ -25,15 +25,28 @@ waManager.setIO(io);
 // Mount API routes
 app.use('/api', apiRoutes);
 
-// Root health check
-app.get('/', (req, res) => {
-  res.json({
-    name: 'Multi-WhatsApp CRM Gateway & Backend',
-    version: '1.0.0',
-    status: 'online',
-    timestamp: new Date().toISOString()
+// Serve static frontend files from client/dist if exists (Desktop / Production Mode)
+const fs = require('fs');
+const clientDistPath = path.join(__dirname, '..', 'client', 'dist');
+if (fs.existsSync(clientDistPath)) {
+  app.use(express.static(clientDistPath));
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api') || req.path.startsWith('/socket.io')) {
+      return next();
+    }
+    res.sendFile(path.join(clientDistPath, 'index.html'));
   });
-});
+} else {
+  // Root health check fallback
+  app.get('/', (req, res) => {
+    res.json({
+      name: 'Multi-WhatsApp CRM Gateway & Backend',
+      version: '1.0.0',
+      status: 'online',
+      timestamp: new Date().toISOString()
+    });
+  });
+}
 
 io.on('connection', (socket) => {
   console.log(`[Socket.io] Client web terhubung: ${socket.id}`);

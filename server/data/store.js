@@ -2,11 +2,27 @@ const fs = require('fs');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 
-const DATA_DIR = path.join(__dirname, '..', 'storage');
+const DATA_DIR = process.env.WACRM_DATA_PATH 
+  ? path.join(process.env.WACRM_DATA_PATH, 'storage')
+  : path.join(__dirname, '..', 'storage');
 const DB_FILE = path.join(DATA_DIR, 'crm_db.json');
 
 if (!fs.existsSync(DATA_DIR)) {
   fs.mkdirSync(DATA_DIR, { recursive: true });
+}
+
+// Jika menggunakan custom DATA_PATH (seperti Electron userData), salin database lokal jika target belum ada
+if (process.env.WACRM_DATA_PATH && !fs.existsSync(DB_FILE)) {
+  const localSeedFile = path.join(__dirname, '..', 'storage', 'crm_db.json');
+  if (fs.existsSync(localSeedFile)) {
+    try {
+      const initialSeed = fs.readFileSync(localSeedFile, 'utf8');
+      fs.writeFileSync(DB_FILE, initialSeed, 'utf8');
+      console.log('[Store] Berhasil menyalin database awal ke user data directory:', DB_FILE);
+    } catch (e) {
+      console.warn('[Store] Gagal menyalin default db:', e.message);
+    }
+  }
 }
 
 function normalizeIndonesianPhone(phone) {

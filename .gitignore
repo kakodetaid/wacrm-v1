@@ -5,6 +5,7 @@ client/node_modules/
 # Production build
 client/dist/
 dist/
+release/
 
 # WhatsApp Private Sessions & Auth Keys (SANGAT PENTING: Jangan di-upload ke publik!)
 server/sessions/
